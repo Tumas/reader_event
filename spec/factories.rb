@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :feed_entry do
     feed
     event
-    
+
     sequence(:title) { |n| "Feed entry title - #{n}" }
     sequence(:summary) { |n| "Feed entry summary - #{n}" }
     sequence(:published_at) { |n| n.days.ago } 
@@ -13,12 +13,15 @@ FactoryGirl.define do
 
   factory :event do
     feed
+
+    factory :user_upload_event, class: UserUploadEvent do
+    end
   end
 
-  factory :rss_entry, class: 'Feedzirra::Parser::RSSEntry' do
-    sequence(:title) { |n| "RSS Feed entry title - #{n}" }
-    sequence(:summary) { |n| "RSS Feed entry summary - #{n}" }
-    sequence(:published) { |n| n.days.ago.to_s } 
+  factory :rss_entry, class: Feedzirra::Parser::RSSEntry do
+    title "RSS Feed entry title"
+    summary "RSS Feed entry summary"
+    published 1.day.ago.to_s
   end
 
   factory :feed do

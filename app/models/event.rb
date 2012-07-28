@@ -1,10 +1,7 @@
 class Event < ActiveRecord::Base
+  has_many :feed_entries
   belongs_to :feed
-  has_many :feed_entries#, :as => :feedable
 
-  # entry here is not feed_entry - it's a rss entry from feedzirra that could be 
-  # converted to feed entry if event occurred 
-  
   def event_occurred?(entry)
     false
   end

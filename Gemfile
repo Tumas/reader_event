@@ -27,6 +27,7 @@ group :test, :development do
   gem "factory_girl_rails", "~> 3.0"
   gem 'database_cleaner'
   gem 'spork', '~> 1.0rc'
+  gem 'mocha'
 end
 
 # To use ActiveModel has_secure_password

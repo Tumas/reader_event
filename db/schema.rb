@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20120728124851) do
 
   create_table "events", :force => true do |t|
     t.integer  "feed_id"
+    t.string   "type"
     t.string   "title"
     t.text     "description"
     t.datetime "created_at",  :null => false

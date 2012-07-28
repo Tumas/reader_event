@@ -27,8 +27,8 @@ describe Event do
 
     it "should add transformed entry" do
       feed_entry = @event.add_entry(@entry)
-      feed_entry.title.should == "RSS Feed entry title - 1" 
-      feed_entry.summary.should == "RSS Feed entry summary - 1" 
+      feed_entry.title.should == "RSS Feed entry title" 
+      feed_entry.summary.should == "RSS Feed entry summary" 
     end
   end
 end
