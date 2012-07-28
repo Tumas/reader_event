@@ -22,6 +22,7 @@ FactoryGirl.define do
     title "RSS Feed entry title"
     summary "RSS Feed entry summary"
     published 1.day.ago.to_s
+    url "http://www.test.com"
   end
 
   factory :feed do

@@ -7,6 +7,7 @@ gem 'rails', '3.2.2'
 
 gem 'sqlite3'
 gem 'feedzirra'
+gem 'mechanize'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,6 +29,10 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'spork', '~> 1.0rc'
   gem 'mocha'
+end
+
+group :test do
+  gem 'fakeweb'
 end
 
 # To use ActiveModel has_secure_password

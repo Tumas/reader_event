@@ -5,6 +5,7 @@ class CreateFeedEntries < ActiveRecord::Migration
       t.integer :event_id
 
       t.string :title
+      t.string :headline
       t.string :url
       t.string :guid
 

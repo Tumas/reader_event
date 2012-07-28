@@ -12,7 +12,9 @@ class Feed < ActiveRecord::Base
   def check_events entries
     self.events.each do |event|
       entries.each do |entry|
-        event.add_entry entry if event.event_occurred? entry
+        if event.event_occurred? entry
+          event.register entry
+        end
       end
     end
   end
