@@ -1,0 +1,6 @@
+1. Add feed
+2. define event
+3. get notified 
+  email
+  rss
+
