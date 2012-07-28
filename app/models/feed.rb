@@ -1,5 +1,6 @@
 class Feed < ActiveRecord::Base
   has_many :feed_entries
+  has_many :events
 
   #has_many :events
   # subclasses implement check(feed_entry)

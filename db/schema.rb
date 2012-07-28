@@ -11,10 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120726213325) do
+ActiveRecord::Schema.define(:version => 20120728124851) do
+
+  create_table "events", :force => true do |t|
+    t.integer  "feed_id"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "feed_entries", :force => true do |t|
     t.integer  "feed_id"
+    t.integer  "event_id"
     t.string   "title"
     t.string   "url"
     t.string   "guid"
