@@ -12,7 +12,7 @@ class UserUploadEvent < Event
   private 
 
   def tracked_users
-    LINKOMANIJA::TRACKED_USERS
+    LM::TRACKED_USERS
   end
 
   def fetch_users entry
@@ -35,8 +35,8 @@ class UserUploadEvent < Event
   end
 
   def login form
-    form.username = LINKOMANIJA::USERNAME
-    form.password = LINKOMANIJA::PASSWORD
+    form.username = LM::USERNAME
+    form.password = LM::PASSWORD
     form.submit
   end
 
