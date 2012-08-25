@@ -33,14 +33,14 @@ describe UserUploadEvent do
 
       context "event occurred" do
         it "should be true" do
-          @event.stubs(:tracked_users).returns(%w{ Harold })
+          FactoryGirl.create :followed_user, name: 'Harold', event: @event 
           @event.event_occurred?(@entry).should be_true
         end
       end
 
       context "event did not occur" do
         it "should be false" do
-          @event.stubs(:tracked_users).returns(%w{ Joe })
+          FactoryGirl.create :followed_user, name: 'Joe', event: @event 
           @event.event_occurred?(@entry).should be_false
         end
       end
@@ -53,14 +53,14 @@ describe UserUploadEvent do
 
       context "event occurred" do
         it "should be true" do
-          @event.stubs(:tracked_users).returns(%w{ Harold })
+          FactoryGirl.create :followed_user, name: 'Harold', event: @event 
           @event.event_occurred?(@entry).should be_true
         end
       end
 
       context "event did not occur" do
         it "should be false" do
-          @event.stubs(:tracked_users).returns(%w{ Joe })
+          FactoryGirl.create :followed_user, name: 'Joe', event: @event 
           @event.event_occurred?(@entry).should be_false
         end
       end

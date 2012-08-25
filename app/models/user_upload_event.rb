@@ -1,4 +1,6 @@
 class UserUploadEvent < Event
+  has_many :followed_users, :foreign_key => :event_id
+
   def event_occurred? entry 
     @users = fetch_users entry
     @users.any?
@@ -10,10 +12,6 @@ class UserUploadEvent < Event
 
   private 
 
-  def tracked_users
-    LM::TRACKED_USERS
-  end
-
   def fetch_users entry
     page = agent.get entry.url
     form = page.forms.first
@@ -24,9 +22,9 @@ class UserUploadEvent < Event
     end
 
     user_activity = []
-    tracked_users.each do |username|
-      if agent.page.link_with text: username
-        user_activity << username
+    followed_users.each do |user|
+      if agent.page.link_with text: user.name
+        user_activity << user.name
       end
     end
 

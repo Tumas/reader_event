@@ -5,7 +5,7 @@ class Feed < ActiveRecord::Base
   validates_presence_of :url
 
   def update
-    entries =  Feed.fetch_feed(self.url).entries
+    entries = Feed.fetch_feed(self.url).entries
     check_events entries
   end
 

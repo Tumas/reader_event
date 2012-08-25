@@ -18,6 +18,9 @@ FactoryGirl.define do
     end
   end
 
+  factory :followed_user do
+  end
+
   factory :rss_entry, class: Feedzirra::Parser::RSSEntry do
     title "RSS Feed entry title"
     summary "RSS Feed entry summary"
