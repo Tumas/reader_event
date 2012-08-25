@@ -1,13 +1,22 @@
 class Event < ActiveRecord::Base
   has_many :feed_entries
+  has_many :event_records
   belongs_to :feed
 
   def event_occurred? entry
     false
   end
 
+  def event_options feed_entry
+    {}
+  end
+
   def create_event_record feed_entry
-    false
+    unless event_records.where(:feed_entry_id => feed_entry.id).any?
+      options = event_options feed_entry
+      options[:feed_entry_id] = feed_entry.id
+      event_records.create options
+    end
   end
 
   def register entry

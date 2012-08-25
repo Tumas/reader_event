@@ -19,6 +19,11 @@ describe Event do
       }.to change { @event.feed_entries.size }.to 1
     end
 
+    it "should specify event relationship" do
+      er = @event.add_entry(@entry)
+      er.event.should == @event
+    end
+
     it "should return feed_entry" do
       @event.add_entry(@entry).should be_instance_of(FeedEntry)
     end
@@ -39,6 +44,14 @@ describe Event do
       feed_entry = @event.add_entry(@entry)
       feed_entry.title.should == "RSS Feed entry title" 
       feed_entry.summary.should == "RSS Feed entry summary" 
+    end
+  end
+
+  describe "register" do
+    it "should not create multiple event records" do
+      expect { 
+        2.times { @event.register(@entry) }
+      }.to change { EventRecord.all.size }.to(1)
     end
   end
 end

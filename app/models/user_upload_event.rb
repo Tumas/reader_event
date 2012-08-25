@@ -1,12 +1,11 @@
 class UserUploadEvent < Event
-  def event_occurred?(entry)
+  def event_occurred? entry 
     @users = fetch_users entry
     @users.any?
   end
 
-  def create_event_record feed_entry
-    message = "Message: User activity detected for: #{@users.join(", ")}"
-    feed_entry.event_records.create headline: message
+  def event_options feed_entry
+    { headline: "Message: User activity detected for #{@users.join(", ")}" }
   end
 
   private 

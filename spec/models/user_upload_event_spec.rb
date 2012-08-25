@@ -20,7 +20,7 @@ describe UserUploadEvent do
 
     it "should create event record with correct headline" do
       @event.create_event_record @feed_entry
-      @feed_entry.event_records.first.headline.should == "Message: User activity detected for: Harold"
+      @feed_entry.event_records.first.headline.should == "Message: User activity detected for Harold"
     end
   end
 
