@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'feedzirra'
 gem 'mechanize'
 
+gem 'resque-scheduler', :require => 'resque_scheduler'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

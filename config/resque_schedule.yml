@@ -1,0 +1,6 @@
+update_feeds:
+  every: 6hr 
+  class: UpdateFeeds
+  queue: 'updates'
+  args:
+  description: "Update Feeds"
