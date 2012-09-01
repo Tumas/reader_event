@@ -8,7 +8,8 @@ gem 'rails', '3.2.2'
 gem 'sqlite3'
 gem 'feedzirra'
 gem 'mechanize'
-
+gem 'capistrano'
+gem 'rvm-capistrano'
 gem 'resque-scheduler', :require => 'resque_scheduler'
 
 # Gems used only for assets and not required
@@ -18,8 +19,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
+  gem 'therubyracer'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -46,8 +46,6 @@ end
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
