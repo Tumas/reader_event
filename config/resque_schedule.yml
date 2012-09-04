@@ -1,5 +1,5 @@
 update_feeds:
-  every: 6h 
+  every: '1h'
   class: UpdateFeeds
   queue: 'updates'
   args:
