@@ -67,6 +67,7 @@ GEM
       rake (>= 0.9.2)
       rdoc (~> 3.8)
       sax-machine (~> 0.0.20)
+    god (0.13.1)
     highline (1.6.15)
     hike (1.2.1)
     i18n (0.6.1)
@@ -208,6 +209,7 @@ DEPENDENCIES
   factory_girl_rails (~> 3.0)
   fakeweb
   feedzirra
+  god
   jquery-rails
   mechanize
   mocha

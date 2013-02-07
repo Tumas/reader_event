@@ -11,6 +11,7 @@ gem 'mechanize'
 gem 'capistrano'
 gem 'rvm-capistrano'
 gem 'resque-scheduler', :require => 'resque_scheduler'
+gem 'god'
 
 # Gems used only for assets and not required
 # in production environments by default.
