@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20120825153241) do
     t.integer  "feed_id"
     t.integer  "event_id"
     t.string   "title"
+    t.string   "headline"
     t.string   "url"
     t.string   "guid"
     t.text     "summary"
